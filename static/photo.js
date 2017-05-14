@@ -20,6 +20,7 @@ detector.addEventListener("onInitializeSuccess", function() {
   log('#logs', "The detector reports initialized");
 
   $("#upload_button").css("visibility", "visible");
+  $("#btnSelfie").show();
   $("#info").text("Affectiva is ready");
 });
 
@@ -83,7 +84,8 @@ function getDominantEmotion(emotions){
   $(".pola").attr("src", gifToRender);
   $("#info").text(myEmotion);
   $("#btnSelfie").hide();
-  $("#thinking").show();
+  setTimeout(function(){   $("#thinking").show(); }, 2000);
+  rating = localStorage.getItem("rating");
   console.log(myEmotion);
 }
 
